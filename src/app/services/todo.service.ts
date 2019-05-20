@@ -20,12 +20,12 @@ export class TodoService {
   constructor(private http: HttpClient) {}
 
   // Add Todo
-  addTodo(todo: Todo): Observable<Todo> {
+  addTodo(todo: Todo): Observable<any> {
     return this.http.post<Todo>(this.todosUrl, todo, httpOptions);
   }
 
   // Delete Todo
-  deleteTodo(todo: Todo): Observable<Todo> {
+  deleteTodo(todo: Todo): Observable<any> {
     const url = `${this.todosUrl}/${todo.id}`;
     return this.http.delete(url, httpOptions);
   }
